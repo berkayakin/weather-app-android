@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="unsuccessful">Unsuccessful</string>
+    <string name="location">Location</string>
+    <string name="temperature">Temperature</string>
+    <string name="no_location_selected">No location selected</string>
+    <string name="select_location_on_map">Select a location on the map by long press</string>
+    <string name="loading">Loading</string>
+    <string name="msg_call_failed">Something went wrong</string>
+    <string name="try_again">Try Again</string>
+</resources>

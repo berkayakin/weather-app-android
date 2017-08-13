@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="weatherapp.testchambr.com.weatherapp.activities.WeatherActivity">
+
+    <weatherapp.testchambr.com.weatherapp.views.MyOsmMapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="62"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="38"
+        android:background="@color/white">
+
+        <ScrollView
+            android:id="@+id/weatherResultView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:padding="@dimen/activity_vertical_margin"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/locationNameTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_half"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/locationCoordinatesTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/locationNameTV"
+                    android:layout_marginBottom="@dimen/margin_half"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/weatherTemperatureTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/locationCoordinatesTV"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/noLocationSelectedView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:padding="@dimen/activity_vertical_margin">
+
+            <TextView
+                android:id="@+id/noLocationSelectedTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no_location_selected"
+                android:layout_marginBottom="@dimen/margin_half"
+                android:textSize="20sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/noLocationSelectedTV"
+                android:text="@string/select_location_on_map"
+                android:textSize="16sp"/>
+
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:id="@+id/loadingView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center"
+            android:visibility="gone">
+
+                <android.support.v4.widget.ContentLoadingProgressBar
+                    android:id="@+id/loadingProgressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_marginBottom="@dimen/margin_half"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/loadingProgressBar"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/loading"
+                    android:textAllCaps="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/failedView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center"
+            android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/failedMessageTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/msg_call_failed"
+                    android:textSize="16sp"
+                    android:textColor="@color/red"
+                    android:layout_marginBottom="@dimen/margin_half"
+                    android:gravity="center_horizontal"/>
+
+                <Button
+                    android:id="@+id/tryAgainButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/failedMessageTV"
+                    android:stateListAnimator="@null"
+                    android:text="@string/try_again"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:textColor="@color/white"
+                    android:padding="@dimen/activity_vertical_margin"
+                    android:layout_centerHorizontal="true"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
