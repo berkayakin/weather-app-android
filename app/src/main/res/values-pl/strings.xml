@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="unsuccessful">Nieudany</string>
+    <string name="location">"Lokalizacja "</string>
+    <string name="temperature">Temperatura</string>
+    <string name="no_location_selected">Nie wybrano lokalizacji</string>
+    <string name="select_location_on_map">Wybierz lokalizację na mapie przez długie naciśnięcie</string>
+    <string name="loading">"Ładuję "</string>
+    <string name="msg_call_failed">"Coś poszło nie tak "</string>
+    <string name="try_again">"Spróbuj Ponownie "</string>
+</resources>
