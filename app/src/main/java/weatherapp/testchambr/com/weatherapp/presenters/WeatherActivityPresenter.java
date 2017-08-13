@@ -12,8 +12,8 @@ public class WeatherActivityPresenter extends BasePresenter {
     private WeatherActivityPresenterListener weatherActivityPresenterListener;
     private Call<WeatherResponse> weatherResponseCall;
     private WeatherResponse lastWeatherResponse;
-    private Double lastLocationLatitude = 0.0;
-    private Double lastLocationLongitude = 0.0;
+
+    private LatLng lastLocation = LatLng.make(0.0,0.0);
 
     public interface WeatherActivityPresenterListener {
         void weatherReady (WeatherResponse weatherResponse);
@@ -32,8 +32,7 @@ public class WeatherActivityPresenter extends BasePresenter {
         if(weatherResponseCall != null)
             weatherResponseCall.cancel();
 
-        lastLocationLatitude = latLng.getLatitude();
-        lastLocationLongitude = latLng.getLongitude();
+        lastLocation = latLng;
 
         weatherResponseCall = getApiInterface().getWeatherByCoordinates(latLng.getLatitude(), latLng.getLongitude(), Constants.OPENWEATHER_API_KEY);
         weatherResponseCall.enqueue(new Callback<WeatherResponse>() {
@@ -58,16 +57,12 @@ public class WeatherActivityPresenter extends BasePresenter {
         });
     }
 
-    public Double getLastLocationLatitude() {
-        return lastLocationLatitude;
-    }
-
-    public Double getLastLocationLongitude() {
-        return lastLocationLongitude;
-    }
-
     public WeatherResponse getLastWeatherResponse() {
         return lastWeatherResponse;
+    }
+
+    public LatLng getLastLocation() {
+        return lastLocation;
     }
 
     public void cancelAllRequests () {

@@ -125,7 +125,7 @@ public class WeatherActivity extends AppCompatActivity implements WeatherActivit
     void tryAgain () {
 
         if(weatherActivityPresenter != null)
-            getWeather(LatLng.make(weatherActivityPresenter.getLastLocationLatitude(), weatherActivityPresenter.getLastLocationLongitude()));
+            getWeather(weatherActivityPresenter.getLastLocation());
     }
 
     //When we override this method and add android:configChanges="orientation" to the activity on the manifest file,
@@ -152,8 +152,8 @@ public class WeatherActivity extends AppCompatActivity implements WeatherActivit
         outState.putInt("loadingViewVisibility", loadingView.getVisibility());
         outState.putInt("failedViewVisibility", failedView.getVisibility());
         outState.putBoolean("mapHasMarker", mapView.hasMarker());
-        outState.putDouble("lastLocationLatitude", weatherActivityPresenter.getLastLocationLatitude());
-        outState.putDouble("lastLocationLongitude", weatherActivityPresenter.getLastLocationLongitude());
+        outState.putDouble("lastLocationLatitude", weatherActivityPresenter.getLastLocation().getLatitude());
+        outState.putDouble("lastLocationLongitude", weatherActivityPresenter.getLastLocation().getLongitude());
         outState.putInt("mapZoomLevel", mapView.getZoom());
         outState.putDouble("mapCenterLatitude", mapView.getCenter().getLatitude());
         outState.putDouble("mapCenterLongitude", mapView.getCenter().getLongitude());
