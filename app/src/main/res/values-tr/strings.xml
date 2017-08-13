@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="unsuccessful">Başarısız</string>
+    <string name="location">Konum</string>
+    <string name="temperature">Sıcaklık</string>
+    <string name="no_location_selected">Henüz konum seçilmedi</string>
+    <string name="select_location_on_map">Haritaya uzun dokunarak bir konum seçin</string>
+    <string name="loading">Yükleniyor</string>
+    <string name="msg_call_failed">Bir şeyler yanlış gitti</string>
+    <string name="try_again">Tekrar Deneyin</string>
+</resources>
