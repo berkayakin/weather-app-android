@@ -198,6 +198,11 @@ public class WeatherActivity extends AppCompatActivity implements WeatherActivit
     }
 
     @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        restoreState(savedInstanceState);
+    }
+
+    @Override
     public void onDestroy () {
         super.onDestroy();
 
