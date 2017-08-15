@@ -38,4 +38,8 @@ public class WeatherMain {
     public Double getMaximumTemperature() {
         return MaximumTemperature;
     }
+
+    public void setTemperature(Double temperature) {
+        Temperature = temperature;
+    }
 }

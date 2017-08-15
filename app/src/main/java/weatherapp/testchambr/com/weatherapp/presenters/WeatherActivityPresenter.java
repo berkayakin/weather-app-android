@@ -55,6 +55,7 @@ public class WeatherActivityPresenter extends BasePresenter {
                 weatherActivityPresenterListener.weatherFailed(t.getLocalizedMessage());
             }
         });
+
     }
 
     public WeatherResponse getLastWeatherResponse() {
@@ -72,4 +73,5 @@ public class WeatherActivityPresenter extends BasePresenter {
     public WeatherResponse getWeatherResponseForTest (WeatherResponse weatherResponse) {
         return weatherResponse;
     }
+
 }
